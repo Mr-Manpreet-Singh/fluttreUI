@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:day1_inspiration_app/widgets/promo_today.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -17,49 +19,52 @@ class MyApp extends StatelessWidget {
             foregroundColor: Colors.black,
             leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
           ),
-          body: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(20),
+          body: Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.vertical(
+                      bottom: Radius.circular(20),
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        "Find Your",
+                        style: Theme.of(context).textTheme.labelLarge,
+                      ),
+                      Text(
+                        "Inspiration",
+                        style: TextStyle(fontSize: 25),
+                      ),
+                      SizedBox(height: 7),
+                      Container(
+                        padding: EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.grey[200],
+                        ),
+                        child: TextField(
+                          decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.search),
+                              hintText: "Search you're Looking for",
+                              border: InputBorder.none),
+                        ),
+                      )
+                    ],
                   ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      "Find Your",
-                      style: Theme.of(context).textTheme.labelLarge,
-                    ),
-                    Text(
-                      "Inspiration",
-                      style: TextStyle(fontSize: 25),
-                    ),
-                    SizedBox(height: 7),
-                    Container(
-                      padding: EdgeInsets.all(4),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.grey[200],
-                      ),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.search),
-                            hintText: "Search you're Looking for",
-                            border: InputBorder.none),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              // PromoToday()
-            ],
+                PromoToday(),
+              ],
+            ),
           ),
-          
         ),
       ),
     );
