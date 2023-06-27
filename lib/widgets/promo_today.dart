@@ -5,9 +5,9 @@ import 'package:day1_inspiration_app/widgets/bottom_card.dart';
 class PromoToday extends StatelessWidget {
   PromoToday({super.key});
   Widget build(BuildContext context) {
-    return const Padding(
+    return Container(
       padding: EdgeInsets.all(15.0),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
@@ -47,3 +47,22 @@ class PromoToday extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+// LayoutBuilder(
+//   builder: (BuildContext context, BoxConstraints constraints) {
+//     double availableHeight = constraints.maxHeight;
+//     // Use the availableHeight as needed
+//     return Container(
+//       // Your widget tree
+//     );
+//   },
+// ),
